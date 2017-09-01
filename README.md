@@ -65,13 +65,13 @@ Format: `help`
 #### Adding a person: `add`
 > Adds a person to the address book
 
-Format: `add NAME p/PHONE_NUMBER e/EMAIL`  
+Format: `add NAME p/PHONE_NUMBER e/EMAIL a/ADDRESS`  
 > Words in `UPPER_CASE` are the parameters<br>
-  Phone number and email can be in any order but the name must come first.
+  Phone number, email, and address can be in any order but the name must come first.
 
 Examples: 
-* `add John Doe p/98765432 e/johnd@gmail.com`
-* `add Betsy Crowe e/bencrowe@gmail.com p/1234567 `
+* `add John Doe p/98765432 e/johnd@gmail.com a/322 Clementi Ave 2`
+* `add Betsy Crowe e/bencrowe@gmail.com a/22 Haw Par Lane p/1234567 `
 
 #### Listing all persons: `list`
 
@@ -163,12 +163,12 @@ Example:
 
 ## Design
 
-AddressBook saves data in a plain text file, one line for each person, in the format `NAME p/PHONE e/EMAIL`.
+AddressBook saves data in a plain text file, one line for each person, in the format `NAME p/PHONE e/EMAIL a/ADDRESS`.
 Here is an example:
 
 ```
-John Doe p/98765432 e/johnd@gmail.com
-Jane Doe p/12346758 e/jane@gmail.com
+John Doe p/98765432 e/johnd@gmail.com a/322 Clementi Ave 1
+Jane Doe p/12346758 e/jane@gmail.com a/12 Penang Road
 ```
 
 All person data are loaded to memory at start up and written to the file after any command that mutates data.
